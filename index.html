@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Kiên 36 - Hành Trình 13 Năm Từ Bàn Tay Trắng Đến Doanh Nghiệp Uy Tín</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0F172A',
+                            900: '#090D16',
+                            950: '#05080E'
+                        },
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#D97706',
+                            600: '#B45309',
+                            DEFAULT: '#D97706'
+                        },
+                        earth: {
+                            100: '#FDFBF7',
+                            200: '#F5EFE6',
+                            800: '#4A3E3D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-gold {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-earth-100 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-navy-800 border-2 border-gold-500 flex items-center justify-center font-serif font-bold text-white shadow-md group-hover:scale-105 transition">
+                    <span class="text-gold-400">36</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl tracking-wide text-navy-800 uppercase">ĐỖ KIÊN <span class="text-gold-600">36</span></span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-500 font-medium">Khát Vọng & Niềm Tín</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-slate-700">
+                <a href="#about" class="hover:text-gold-600 transition">Về Tôi</a>
+                <a href="#story" class="hover:text-gold-600 transition">Hành Trình 13 Năm</a>
+                <a href="#philosophy" class="hover:text-gold-600 transition">Triết Lý</a>
+                <a href="#gallery" class="hover:text-gold-600 transition">Thư Viện Ảnh</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-navy-800 text-gold-400 hover:bg-navy-900 transition font-semibold text-sm shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i> Liên Hệ
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-navy-800 text-2xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl border-b border-gold-400/20 py-4 px-6">
+            <div class="flex flex-col space-y-4 font-medium text-slate-800">
+                <a href="#about" class="mobile-link py-2 border-b border-slate-100">Về Tôi</a>
+                <a href="#story" class="mobile-link py-2 border-b border-slate-100">Hành Trình 13 Năm</a>
+                <a href="#philosophy" class="mobile-link py-2 border-b border-slate-100">Triết Lý Kinh Doanh</a>
+                <a href="#gallery" class="mobile-link py-2 border-b border-slate-100">Thư Viện Ảnh</a>
+                <a href="#contact" class="mobile-link py-2 text-gold-600 font-bold">Liên Hệ Ngay</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-slate-900 via-navy-900 to-slate-900 text-white">
+        <!-- Background Pattern & Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-award text-gold-400"></i> Dấu Ấn 13 Năm Khởi Nghiệp (2013 - 2026)
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Từ Chàng Lái Xe Giao Hàng Cồng Kềnh <br class="hidden sm:inline">
+                        <span class="gradient-gold font-bold">Đến Ông Chủ Doanh Nghiệp Đỗ Kiên 36</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Mang theo khát vọng ngút ngàn của người con xứ Thanh, vượt hàng ngàn cây số vào miền Tây lập nghiệp. Hành trình 13 năm nuốt nước mắt kiên trì, lấy chữ <span class="text-gold-400 font-semibold">TÍN</span> làm kim chỉ nam để viết nên câu chuyện thành công tại mảnh đất Kiên Giang.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#story" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-gradient text-white font-bold text-sm tracking-wider uppercase shadow-lg shadow-gold-600/30 hover:shadow-gold-600/50 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center gap-3">
+                            <span>Đọc Câu Chuyện</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-gold-400 text-white hover:text-gold-400 font-semibold text-sm tracking-wider uppercase backdrop-blur-sm transition duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Kết Nối Hợp Tác
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="pt-8 border-t border-slate-800 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">13+</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Năm Bôn Ba</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">36</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Hồn Quê Xứ Thanh</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">100%</p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Uy Tín & Tâm Huyết</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Holder -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
+                        <!-- Frame Decor -->
+                        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-gold-500 to-amber-700 opacity-40 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-gold-500/40 shadow-2xl bg-navy-800">
+                            <!-- Main Hero Image -->
+                            <img id="hero-img-display" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Đỗ Kiên 36" class="w-full h-[450px] object-cover object-top hover:scale-105 transition duration-700">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-transparent p-6 text-white">
+                                <p class="font-serif text-lg font-bold text-gold-400">Doanh Nhân Đỗ Kiên</p>
+                                <p class="text-xs text-slate-300">Nhà sáng lập & Giám đốc Doanh Nghiệp TNHH Đỗ Kiên 36</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE SECTION -->
+    <section class="py-12 bg-navy-800 border-y border-gold-500/20 text-white relative">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
+            <i class="fa-solid fa-quote-left text-3xl text-gold-500/40"></i>
+            <p class="font-serif text-xl sm:text-2xl md:text-3xl italic leading-relaxed text-slate-200">
+                "Tôi không chọn nơi mình sinh ra, nhưng tôi chọn cách mình sống và trưởng thành. Chiếc xe giao hàng cồng kềnh năm xưa mang theo mồ hôi và ý chí, còn Đỗ Kiên 36 hôm nay mang theo Chữ Tín và Trách Nhiệm với mảnh đất Kiên Giang."
+            </p>
+            <p class="text-gold-400 font-semibold text-sm tracking-widest uppercase">— Đỗ Văn Kiên (Đỗ Kiên 36)</p>
+        </div>
+    </section>
+
+    <!-- STORY SECTION (CÂU CHUYỆN TRUYỀN CẢM HƯNG) -->
+    <section id="about" class="py-20 bg-earth-100 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-16 reveal">
+                <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Hành Trình Đổi Đời</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-800">Nước Mắt, Mồ Hôi Vấn Vương Dốc Nắng Miền Tây</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl space-y-8 text-slate-700 leading-relaxed text-base sm:text-lg font-light reveal">
+                <p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-gold-600 first-letter:mr-3 first-letter:float-left">
+                    Năm 2013, mang theo tuổi trẻ sục sôi và tình yêu sâu nặng với quê hương Thanh Hóa (đất xứ Thanh 36), một chàng thanh niên trẻ đặt chân xuống vùng đất Rạch Giá - Kiên Giang. Trong tay không vốn nghèo, không mối quan hệ, tài sản duy nhất mang theo chỉ là sức trẻ, sự thẳng thắn và một lời hứa với lòng mình: <strong class="text-navy-800 font-semibold">"Không gục ngã trước cái nghèo".</strong>
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 my-8 items-center">
+                    <div class="space-y-4">
+                        <h3 class="font-serif text-2xl font-bold text-navy-800 border-l-4 border-gold-500 pl-4">Những Ngày Tháng Lái Xe Giao Hàng Kín Người</h3>
+                        <p class="text-slate-600">
+                            Người dân Rạch Giá những năm 2014 - 2017 có lẽ đã quen thuộc với hình ảnh một chàng trai trẻ gầy gò, điều khiển chiếc xe máy chở hàng cồng kềnh gấp 3-4 lần cơ thể. Nhìn từ đằng sau, chỉ thấy hàng hóa chứ không thấy người điều khiển. 
+                        </p>
+                        <p class="text-slate-600">
+                            Những cơn mưa rào bất chợt của miền Tây làm ướt sũng vai áo, những trưa hè nắng cháy da cháy thịt trên dốc cầu... Đã có những lúc mệt nhòa mắt, những đêm nhớ nhà ứa nước mắt, nhưng anh chưa từng buông tay lái. Bất kể đơn hàng lớn hay nhỏ, xa hay gần, đúng giờ và cẩn trọng luôn là nguyên tắc bất di bất dịch.
+                        </p>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg border border-gold-400/20">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" alt="Xe giao hàng cồng kềnh" class="w-full h-72 object-cover">
+                        <div class="absolute inset-0 bg-navy-900/40 flex items-end p-4 text-white text-xs italic">
+                            Hình ảnh chiếc xe chở hàng cồng kềnh - Bước khởi đầu gian khó tích lũy từng đồng lẻ.
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    Mỗi chuyến hàng giao đi không chỉ là sinh kế, mà là một lần anh gửi gắm sự chân thành. Bà con miền Tây bao dung, hào sảng đã thương cái nết siêng năng, thật thà của chàng trai xứ Thanh. Chữ <strong class="text-gold-600 font-semibold">TÍN</strong> bắt đầu được bồi đắp từ từng lời hứa giao hàng đúng hẹn, từng mặt hàng được bảo đảm nguyên vẹn.
+                </p>
+
+                <blockquote class="bg-gold-500/10 border-l-4 border-gold-500 p-6 rounded-r-2xl italic text-navy-800 font-serif text-lg my-6">
+                    "Gian khổ không làm con người ta bé đi, nó chỉ làm cho ý chí thêm rắn rỏi. Tôi luôn tự hào vì mình đi lên từ chiếc xe giao hàng kín người ấy."
+                </blockquote>
+
+                <p>
+                    Năm 2018, sau nhiều năm chắt chiu từng đồng tiền mồ hôi nước mắt, Đỗ Kiên quyết định bước ra khỏi vùng an toàn, chính thức khởi sự kinh doanh. Cái tên <strong class="text-navy-800 font-semibold">Đỗ Kiên 36</strong> ra đời từ đó. "36" không chỉ là con số mã vùng quê hương Thanh Hóa - nơi chôn nhau cắt rốn, mà còn là lời nhắc nhở bản thân luôn giữ vững bản lĩnh, thẳng thắn và kiên cường của người con xứ Thanh giữa lòng Kiên Giang.
+                </p>
+
+                <p>
+                    Đến nay, <strong class="text-gold-600 font-semibold">Doanh Nghiệp TNHH Đỗ Kiên 36</strong> đã vươn mình trở thành một thương hiệu uy tín hàng đầu tại Kiên Giang, khẳng định chỗ đứng vững chắc, tạo việc làm ổn định cho nhiều lao động địa phương. Nhìn lại chặng đường 13 năm, từ chàng lái xe giao hàng năm nào nay đã trở thành chủ doanh nghiệp được khách hàng và đối tác hết lòng tin tưởng.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TIMELINE (HÀNH TRÌNH 13 NĂM) -->
+    <section id="story" class="py-20 bg-navy-900 text-white relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-16 reveal">
+                <span class="text-gold-400 font-semibold text-sm uppercase tracking-widest">Cột Mốc Lịch Sử</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Hành Trình 13 Năm Thắp Sáng Khát Vọng</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Elements -->
+            <div class="relative wrap overflow-hidden p-2 sm:p-10">
+                <!-- Vertical Line -->
+                <div class="border-2-2 absolute border-opacity-20 border-gold-400 h-full border left-1/2 -ml-0.5 hidden md:block"></div>
+
+                <!-- Timeline 1: 2013 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline md:flex-row-reverse reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gold-500 shadow-xl w-12 h-12 rounded-full justify-center font-bold text-navy-900 border-4 border-navy-900">
+                        13
+                    </div>
+                    <div class="order-1 glass-dark rounded-2xl p-6 shadow-xl w-full md:w-5/12 border-l-4 border-gold-500">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-500/20 text-gold-400 mb-2 inline-block">Năm 2013</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Rời Quê Hương Xứ Thanh Vào Nam</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Mang theo balo hành lý giản dị và ngọn lửa khát vọng của tuổi trẻ Thanh Hóa (36), chính thức đặt chân tới Kiên Giang lập nghiệp với hai bàn tay trắng.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 2: 2014 - 2017 -->
+                <div class="mb-12 flex justify-between items-center w-full left-timeline md:flex-row reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gold-500 shadow-xl w-12 h-12 rounded-full justify-center font-bold text-navy-900 border-4 border-navy-900">
+                        14-17
+                    </div>
+                    <div class="order-1 glass-dark rounded-2xl p-6 shadow-xl w-full md:w-5/12 border-r-4 border-gold-500 text-left md:text-right">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-500/20 text-gold-400 mb-2 inline-block">2014 - 2017</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Những Chuyến Xe Giao Hàng Cồng Kềnh</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Tần tảo nắng mưa rong ruổi khắp các ngõ ngách Rạch Giá. Hình ảnh chàng tài xế chở hàng cồng kềnh kín người trở thành biểu tượng cho sự kiên trì và tích lũy từng đồng vốn đầu tiên.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 3: 2018 - 2022 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline md:flex-row-reverse reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gold-500 shadow-xl w-12 h-12 rounded-full justify-center font-bold text-navy-900 border-4 border-navy-900">
+                        18-22
+                    </div>
+                    <div class="order-1 glass-dark rounded-2xl p-6 shadow-xl w-full md:w-5/12 border-l-4 border-gold-500">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-500/20 text-gold-400 mb-2 inline-block">2018 - 2022</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Khởi Sự Thương Hiệu Đỗ Kiên 36</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Bắt đầu mở rộng cơ sở kinh doanh độc lập. Lấy tên Đỗ Kiên 36 để ghi nhớ nguồn cội và xây dựng uy tín chất lượng với cộng đồng đối tác miền Tây.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 4: 2023 - Nay -->
+                <div class="mb-6 flex justify-between items-center w-full left-timeline md:flex-row reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gold-500 shadow-xl w-12 h-12 rounded-full justify-center font-bold text-navy-900 border-4 border-navy-900">
+                        Nay
+                    </div>
+                    <div class="order-1 glass-dark rounded-2xl p-6 shadow-xl w-full md:w-5/12 border-r-4 border-gold-500 text-left md:text-right">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-gold-500/20 text-gold-400 mb-2 inline-block">2023 - Hiệp Hội Doanh Nghiệp</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Doanh Nghiệp TNHH Đỗ Kiên 36 Uy Tín</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Khẳng định vị thế doanh nghiệp vững mạnh tại Kiên Giang. Mở rộng quy mô, nâng cao chất lượng dịch vụ và tích cực đóng góp xã hội.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUSINESS PHILOSOPHY (TRIẾT LÝ KINH DOANH) -->
+    <section id="philosophy" class="py-20 bg-earth-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-16 reveal">
+                <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Kim Chỉ Nam</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-800">Triết Lý Kinh Doanh: TÂM - TÍN - KIÊN</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: TÂM -->
+                <div class="glass-card rounded-2xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-gold-500 text-center space-y-4 reveal">
+                    <div class="w-16 h-16 bg-gold-500/10 text-gold-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-800">TÂM</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Làm việc bằng cả trái tim chân thành. Đặt lợi ích của khách hàng và sự an tâm của đối tác lên hàng đầu trong mọi giao dịch và dịch vụ.
+                    </p>
+                </div>
+
+                <!-- Card 2: TÍN -->
+                <div class="glass-card rounded-2xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-navy-800 text-center space-y-4 reveal">
+                    <div class="w-16 h-16 bg-navy-800/10 text-navy-800 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-800">TÍN</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Một lần bất tín, vạn lần bất tin. Giữ trọn lời hứa từ thời giao chiếc xe hàng nhỏ cho tới khi điều hành doanh nghiệp lớn hôm nay.
+                    </p>
+                </div>
+
+                <!-- Card 3: KIÊN -->
+                <div class="glass-card rounded-2xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-gold-600 text-center space-y-4 reveal">
+                    <div class="w-16 h-16 bg-gold-600/10 text-gold-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-800">KIÊN</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Kiên trì vượt gian khó, không lùi bước trước giông bão. Cái tên "Đỗ Kiên" là minh chứng cho sự bền bỉ vững chãi như đá núi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION (THƯ VIỆN ẢNH TƯƠNG TÁC) -->
+    <section id="gallery" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12 reveal">
+                <span class="text-gold-400 font-semibold text-sm uppercase tracking-widest">Kỷ Niệm & Hình Ảnh</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">Thư Viện Khoảnh Khắc Đỗ Kiên 36</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Những hình ảnh ghi dấu chặng đường làm việc, gặp gỡ đối tác và đời thường.</p>
+                <div class="w-20 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Image Uploader & Quick Action Helper -->
+            <div class="mb-8 p-4 rounded-xl glass-dark flex flex-wrap items-center justify-between gap-4 max-w-3xl mx-auto">
+                <div class="text-xs text-slate-300 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-gold-400 text-base"></i>
+                    <span>Tải ảnh cá nhân của bạn lên để trải nghiệm xem ngay trên giao diện này!</span>
+                </div>
+                <label class="px-4 py-2 rounded-lg bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-xs cursor-pointer transition flex items-center gap-2">
+                    <i class="fa-solid fa-upload"></i> Thay Ảnh Hero/Gallery
+                    <input type="file" id="image-input" accept="image/*" class="hidden">
+                </label>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-container">
+                <!-- Gallery Item 1 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80', 'Doanh Nhân Đỗ Kiên - Chủ Doanh Nghiệp Đỗ Kiên 36')">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Đỗ Kiên" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Chân Dung Doanh Nhân</p>
+                            <p class="text-slate-200 text-xs">Đỗ Kiên 36 - Bản Lĩnh & Uy Tín</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80', 'Kỷ Kỷ Niệm Xe Giao Hàng Gian Khó')">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Xe giao hàng" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Hành Trình Giao Hàng 2014</p>
+                            <p class="text-slate-200 text-xs">Tích lũy từng đồng lẻ từ sự kiên trì</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80', 'Gặp Gỡ Đối Tác & Khách Hàng')">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Gặp gỡ đối tác" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Hợp Tác Phát Triển</p>
+                            <p class="text-slate-200 text-xs">Xây dựng mạng lưới niềm tin vững chắc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80', 'Văn Phòng Doanh Nghiệp Đỗ Kiên 36')">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Văn phòng" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Trụ Sở Đỗ Kiên 36</p>
+                            <p class="text-slate-200 text-xs">Không gian làm việc chuyên nghiệp tại Kiên Giang</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80', 'Đội Nhuệ Lao Động Đỗ Kiên 36')">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80" alt="Đội ngũ" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Đồng Lòng Vươn Xa</p>
+                            <p class="text-slate-200 text-xs">Tạo công ăn việc làm cho anh em lao động</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal" onclick="openLightbox('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80', 'Giao Lưu Khách Hàng')">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Giao lưu" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-gold-400 font-bold text-sm">Tri Ơn Khách Hàng</p>
+                            <p class="text-slate-200 text-xs">Gắn kết tình thân mến miền Tây</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400 focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Zoom Image" class="max-w-full max-h-[80vh] object-contain rounded-lg border border-gold-500/30">
+            <p id="lightbox-caption" class="text-white font-serif mt-4 text-center text-sm sm:text-base"></p>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-earth-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-8 reveal">
+                    <div>
+                        <span class="text-gold-600 font-semibold text-sm uppercase tracking-widest">Kết Nối Với Tôi</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-800 mt-2">Doanh Nghiệp TNHH Đỗ Kiên 36</h2>
+                        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            Luôn sẵn sàng lắng nghe, chia sẻ cơ hội hợp tác kinh doanh và đồng hành cùng quý đối tác tại Kiên Giang & toàn quốc.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm">Địa Chỉ Trụ Sở</h4>
+                                <p class="text-slate-600 text-xs mt-0.5">TP. Rạch Giá, Tỉnh Kiên Giang, Việt Nam</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm">Điện Thoại / Zalo</h4>
+                                <p class="text-slate-600 text-xs mt-0.5">Liên hệ trực tiếp: <span class="font-semibold text-navy-800">Đỗ Kiên 36</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl glass-card">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-800 text-sm">Email Hợp Tác</h4>
+                                <p class="text-slate-600 text-xs mt-0.5">dokien36.kiengiang@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 glass-card rounded-3xl p-8 sm:p-10 shadow-xl reveal">
+                    <h3 class="font-serif text-2xl font-bold text-navy-800 mb-6">Gửi Lời Nhắn Trực Tiếp</h3>
+                    <form id="contact-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Họ và Tên</label>
+                                <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-gold-500 text-sm bg-white/70">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Số Điện Thoại</label>
+                                <input type="tel" required placeholder="0901 234 567" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-gold-500 text-sm bg-white/70">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Chủ Đề Hợp Tác</label>
+                            <input type="text" placeholder="Tư vấn / Hợp tác kinh doanh / Khác" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-gold-500 text-sm bg-white/70">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Nội Dung Lời Nhắn</label>
+                            <textarea rows="4" required placeholder="Nhập lời nhắn của bạn ở đây..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-gold-500 text-sm bg-white/70"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-navy-800 text-gold-400 font-bold uppercase text-xs tracking-widest hover:bg-navy-900 transition shadow-lg">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Gửi Tin Nhắn
+                        </button>
+                    </form>
+                    
+                    <!-- Form Status Toast -->
+                    <div id="form-toast" class="hidden mt-4 p-4 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-semibold text-center border border-emerald-300">
+                        Cảm ơn bạn! Lời nhắn của bạn đã được gửi thành công tới Đỗ Kiên 36.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 font-serif font-bold flex items-center justify-center text-sm">36</div>
+                <span class="font-serif font-bold text-xl text-white tracking-wider">DOANH NGHIỆP TNHH ĐỖ KIÊN 36</span>
+            </div>
+
+            <p class="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
+                Hành trình 13 năm khẳng định uy tín & thương hiệu từ Thanh Hóa đến Kiên Giang (2013 - 2026). Trọn chữ TÍN, vẹn niềm TIN.
+            </p>
+
+            <div class="flex justify-center space-x-6 text-slate-400 text-lg">
+                <a href="#" class="hover:text-gold-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-gold-400 transition"><i class="fa-solid fa-phone"></i></a>
+                <a href="#" class="hover:text-gold-400 transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800 text-[11px] text-slate-500">
+                &copy; 2026 Doanh Nghiệp TNHH Đỗ Kiên 36. Bản quyền thuộc về Đỗ Kiên 36.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation (Pure JS)
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger on initial load
+
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Image Upload Simulator (Allows users to load their own photos live)
+        const imageInput = document.getElementById('image-input');
+        imageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // Update Hero image
+                    document.getElementById('hero-img-display').src = event.target.result;
+                    // Add to gallery top
+                    const galleryContainer = document.getElementById('gallery-container');
+                    const newItem = document.createElement('div');
+                    newItem.className = "group relative rounded-2xl overflow-hidden glass-dark cursor-pointer shadow-lg reveal active";
+                    newItem.onclick = () => openLightbox(event.target.result, 'Hình ảnh cá nhân tải lên');
+                    newItem.innerHTML = `
+                        <img src="${event.target.result}" alt="Ảnh tải lên" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div>
+                                <p class="text-gold-400 font-bold text-sm">Ảnh Cá Nhân Mới</p>
+                                <p class="text-slate-200 text-xs">Đỗ Kiên 36</p>
+                            </div>
+                        </div>
+                    `;
+                    galleryContainer.prepend(newItem);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Contact Form Submission Mockup
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('form-toast');
+            toast.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
